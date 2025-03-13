@@ -83,7 +83,11 @@ ftp-chat-project/
 ## 📸 Screenshots
 **(Frontend UI preview)**
 
-🚀 *Chat interface screenshot here* (add manually)
+🚀 *Chat interface screenshot * 
+![alt text](https://github.com/en-jorgecuel/ftp-chat/blob/main/screenshots/chatbox.jpg?raw=true)
+
+🔧* Chat JSON File *
+![alt text](https://github.com/en-jorgecuel/ftp-chat/blob/main/screenshots/json_file.jpg?raw=true)
 
 ---
 
