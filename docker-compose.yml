@@ -1,0 +1,38 @@
+services:
+  ftp-server:
+    build:
+      context: ./backend/ftp-server
+    container_name: ftp-server
+    networks:
+      - chat-network
+    ports:
+      - "2121:2121"
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    networks:
+      - chat-network
+    depends_on:
+      - ftp-server
+    environment:
+      - FTP_HOST=ftp-server
+      - FTP_PORT=2121
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    networks:
+      - chat-network
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+
+networks:
+  chat-network:
+    driver: bridge

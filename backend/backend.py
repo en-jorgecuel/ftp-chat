@@ -6,8 +6,8 @@ from ftplib import FTP
 
 app = FastAPI()
 
-FTP_HOST = "psychic-guide-499wvjx79x9fp4p-2121.app.github.dev"
-FTP_PORT = 443
+FTP_HOST = "host.docker.internal"
+FTP_PORT = 2121
 FTP_USER = "testuser"
 FTP_PASS = "testpass"
 DATA_DIR = "chat_data"
