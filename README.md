@@ -1,13 +1,13 @@
 # 🚀 FTP Chat (Architectural Joke Edition)
 
-A **full-stack** chat application where messages are stored in JSON files and transferred via **FTP** (because why not? 😆). This project is a joke on bad architecture but is fully functional!
+A **full-stack** chat application where messages are stored in JSON files and transferred via **FTP**—because why not? 😆 This project is both a **joke on bad architecture** and a fully functional chat system!
 
 ---
 
 ## 🛠️ Tech Stack
 - **Backend:** FastAPI (Python)
 - **Frontend:** React.js (Vite)
-- **Storage:** JSON files (LOL)
+- **Storage:** JSON files (yes, seriously)
 - **Data Transfer:** FTP (because REST or WebSockets were too mainstream)
 
 ---
@@ -17,6 +17,8 @@ A **full-stack** chat application where messages are stored in JSON files and tr
 ftp-chat-project/
 │── backend/     # FastAPI backend
 │── frontend/    # React.js frontend
+│── chat_data/   # JSON file storage (messages)
+│── ftp_server/  # FTP storage simulation
 ```
 
 ---
@@ -31,12 +33,13 @@ ftp-chat-project/
 2. **Create a virtual environment (optional but recommended):**
    ```sh
    python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source venv/bin/activate  # On Windows: `venv\Scripts\activate`
    ```
 3. **Install dependencies:**
    ```sh
-   pip install fastapi uvicorn python-multipart aiofiles #ftplib
+   pip install -r requirements.txt
    ```
+   *(Make sure `requirements.txt` includes `fastapi`, `uvicorn`, `python-multipart`, `aiofiles`, and `ftplib`.)*
 4. **Run the server:**
    ```sh
    uvicorn main:app --reload --host 0.0.0.0 --port 8000
@@ -59,9 +62,9 @@ ftp-chat-project/
 ---
 
 ## ⚙️ How It Works
-- **Users connect** via WebSockets to chat in 1-on-1 or team channels.
+- **Users connect** via WebSockets for real-time chat.
 - **Messages are stored** in JSON files inside a local `chat_data/` directory.
-- **JSON files are uploaded & downloaded** to an FTP server to simulate a "distributed system." 😂
+- **JSON files are uploaded & downloaded** to an FTP server—because nothing screams "enterprise-grade" like FTP. 😂
 
 ---
 
@@ -74,20 +77,18 @@ ftp-chat-project/
 
 ## 🔥 Features
 ✅ 1-on-1 and team chats  
-✅ Messages stored in JSON (seriously...)  
+✅ Messages stored in **JSON files** (because databases are overrated)  
 ✅ WebSockets for real-time updates  
-✅ FTP-powered file transfers (because why not?)  
+✅ FTP-powered file transfers (don't ask why)  
 
 ---
 
 ## 📸 Screenshots
-**(Frontend UI preview)**
+### 🚀 *Chat Interface Preview*
+![Chatbox UI](https://github.com/en-jorgecuel/ftp-chat/blob/main/screenshots/chatbox.jpg?raw=true)
 
-🚀 *Chat interface screenshot * 
-![alt text](https://github.com/en-jorgecuel/ftp-chat/blob/main/screenshots/chatbox.jpg?raw=true)
-
-🔧* Chat JSON File *
-![alt text](https://github.com/en-jorgecuel/ftp-chat/blob/main/screenshots/json_file.jpg?raw=true)
+### 🔧 *Raw Chat JSON File*
+![Chat JSON](https://github.com/en-jorgecuel/ftp-chat/blob/main/screenshots/json_file.jpg?raw=true)
 
 ---
 
@@ -99,12 +100,12 @@ ftp-chat-project/
 ---
 
 ## 🏆 Future "Improvements"
-- ~~Replace FTP with Blockchain~~ (please don't 😅)
+- ~~Replace FTP with Blockchain~~ (please don’t 😅)
 - Add **AI-powered emoji suggestions** 🤖
-- Use **DNS TXT records to store messages** (😂)
+- Store messages in **DNS TXT records** (because why not? 😂)
 
 ---
 
 ## 📜 License
-This project is open-source. Use it at your own risk and *don't blame me when your CTO yells at you!* 😆
+This project is open-source. Use it at your own risk, and *don’t blame me when your CTO yells at you!* 😆
 
