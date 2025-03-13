@@ -1,0 +1,21 @@
+# Node.js .gitignore
+node_modules/
+dist/
+.env
+npm-debug.log
+yarn-error.log
+.vscode/
+.DS_Store
+
+# Python .gitignore
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.envrc
+.idea/
+.vscode/
+.DS_Store
+chat_data/

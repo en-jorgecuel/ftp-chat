@@ -1,4 +1,4 @@
 uvicorn
 python-multipart
 aiofiles
-ftplib
+fastapi

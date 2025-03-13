@@ -35,7 +35,7 @@ ftp-chat-project/
    ```
 3. **Install dependencies:**
    ```sh
-   pip install fastapi uvicorn python-multipart aiofiles ftplib
+   pip install fastapi uvicorn python-multipart aiofiles #ftplib
    ```
 4. **Run the server:**
    ```sh

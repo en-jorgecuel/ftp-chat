@@ -6,12 +6,13 @@ from ftplib import FTP
 
 app = FastAPI()
 
+FTP_HOST = "psychic-guide-499wvjx79x9fp4p-2121.app.github.dev"
+FTP_PORT = 443
+FTP_USER = "testuser"
+FTP_PASS = "testpass"
 DATA_DIR = "chat_data"
-FTP_HOST = "your.ftp.server"
-FTP_USER = "your_ftp_user"
-FTP_PASS = "your_ftp_password"
 
-ios.makedirs(DATA_DIR, exist_ok=True)
+os.makedirs(DATA_DIR, exist_ok=True)
 
 connections = {}
 
@@ -32,7 +33,7 @@ def load_messages(channel: str):
 def upload_to_ftp(channel: str):
     file_path = get_chat_file(channel)
     try:
-        with FTP(FTP_HOST) as ftp:
+        with FTP(FTP_HOST, FTP_PORT) as ftp:
             ftp.login(FTP_USER, FTP_PASS)
             with open(file_path, "rb") as f:
                 ftp.storbinary(f"STOR {channel}.json", f)
@@ -42,7 +43,7 @@ def upload_to_ftp(channel: str):
 def download_from_ftp(channel: str):
     file_path = get_chat_file(channel)
     try:
-        with FTP(FTP_HOST) as ftp:
+        with FTP(FTP_HOST, FTP_PORT) as ftp:
             ftp.login(FTP_USER, FTP_PASS)
             with open(file_path, "wb") as f:
                 ftp.retrbinary(f"RETR {channel}.json", f.write)
@@ -56,6 +57,7 @@ async def chat_ws(websocket: WebSocket, channel: str, user: str):
         connections[channel] = []
     connections[channel].append(websocket)
 
+    download_from_ftp(channel)  # Ensure latest messages are loaded
     messages = load_messages(channel)
     await websocket.send_json(messages)
 
