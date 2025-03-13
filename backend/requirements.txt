@@ -1,4 +1,5 @@
-uvicorn
+fastapi
+uvicorn[standard]
 python-multipart
 aiofiles
-fastapi
+websockets
