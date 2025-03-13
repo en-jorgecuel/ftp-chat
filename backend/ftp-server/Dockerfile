@@ -4,7 +4,7 @@ FROM python:latest
 WORKDIR /app
 
 # Copy script to container
-COPY ftp_test_server.py ./
+COPY ftp.py ./
 
 # Install dependencies
 RUN pip install pyftpdlib
