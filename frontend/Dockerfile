@@ -14,7 +14,7 @@ COPY . .
 RUN npm run build
 
 # Expose port 5173 (default for Vite)
-EXPOSE 5173
+EXPOSE 4173
 
 # Start the frontend in production mode
 CMD ["npm", "run", "preview"]
